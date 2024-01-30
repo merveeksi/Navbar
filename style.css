@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Audiowide", sans-serif;
+}
+
+body {
+    display: flex;               /*kutunun davranışı esnek seçildi*/
+    justify-content: center;     /*esnek ögeler ortalandı*/
+    align-items: center;         /*ögeler ortalandı*/
+    min-height: 100vh;
+    background: #09000e;       /*ardalan rengi*/
+}
+
+nav a {
+    position: relative;          /*kutunun konumu bulunduğu yere göre konumlandı*/
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #ffd1e3;
+    text-decoration: none;       /*alt çizgi kaldırıldı*/
+    padding: 6px 20px;
+    transition: .5s;             /*geçiş (saniye)*/
+}
+
+nav a:hover {                    /*fare link üzerine geldiğinde*/
+    color: #a367b1;
+}
+
+nav a span {
+    position: absolute;          /*içinde bulunduğu kutuya göre ayarlandı */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;                /*kutu arkaya alındı(Daha yüksek z index değerine sahip olan daha önde görünür.)*/
+    border-bottom: 2px solid #a367b1;     /*alt kenarlık ayarlandı*/
+    border-radius: 15px;        /*kutu kenarları yuvarlandı*/
+    transform: scale(0) translate Y(50px);  /*2B ölçekli dönüşüm ve Y eksenindeKi konumu tanımlandı*/
+    opacity: 0;                 /*opaklık*/
+    transition: .5S;
+}
+
+nav a:hover span {
+    transform: scale(1) translate Y(0);
+    opacity: 1;
+}
